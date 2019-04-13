@@ -38,3 +38,10 @@ Route::get('admin/route', 'RouteController@route');
 Route::get('admin/route/{id}', 'RouteController@routeDetail');
 Route::get('admin/route/{id}/save', 'RouteController@routeSave');
 Route::get('admin/route/{id}/delete', 'RouteController@routeDelete');
+
+Route::get('admin/reservation', 'ReservationController@reservation');
+Route::get('admin/reservation/pending', 'ReservationController@reservationPending');
+Route::get('admin/reservation/{id}', 'ReservationController@reservationDetail');
+Route::get('admin/reservation/{id}/save', 'ReservationController@reservationSave');
+Route::get('admin/reservation/{id}/delete', 'ReservationController@reservationDelete');
+Route::get('admin/reservation/{id}/{status}', 'ReservationController@reservationConfirm');

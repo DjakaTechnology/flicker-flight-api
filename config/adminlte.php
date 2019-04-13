@@ -130,6 +130,16 @@ return [
             'icon'        => 'plane',
         ],
         [
+            'text' => 'Tiket',
+            'url'  => 'admin/reservation',
+            'icon'        => 'ticket',
+        ],
+        [
+            'text' => 'Approval Tiket',
+            'url'  => 'admin/reservation/pending',
+            'icon'        => 'clock-o',
+        ],
+        [
             'text' => 'Rute',
             'url'  => 'admin/route',
             'icon'        => 'road',
