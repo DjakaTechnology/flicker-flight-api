@@ -19,4 +19,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/login', 'UserController@login');
 
-Route::get('admin/airport', 'AdminController@airport');
+Route::get('admin/airport', 'AirportController@airport');
+Route::get('admin/airport/{id}', 'AirportController@airportDetail');
+Route::get('admin/airport/{id}/update', 'AirportController@airportUpdate');
+Route::get('admin/airport/{id}/delete', 'AirportController@airportDelete');

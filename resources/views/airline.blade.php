@@ -19,19 +19,17 @@
             <thead>
                 <tr>
                     <th>Nama</th>
-                    <th>Kode</th>
-                    <th>Kota</th>
-                    <th>Alamat</th>
+                    <th>Logo</th>
+                    <th>Deskripsi</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($airport as $a)
+                @foreach($airline as $a)
                 <tr>
                     <td>{{$a->name}}</td>
-                    <td>{{$a->code}}</td>
-                    <td>{{$a->city}}</td>
-                    <td>{{$a->address}}</td>
+                    <td><img src="{{$a->logo}}"/></td>
+                    <td>{{$a->description}}</td>
                     <td>
                         <a href="{{url('admin/airport/'.$a->id)}}">
                             <i class="fa fa-pencil"></i>
