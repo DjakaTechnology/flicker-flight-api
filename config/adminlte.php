@@ -144,6 +144,11 @@ return [
             'url'  => 'admin/route',
             'icon'        => 'road',
         ],
+        [
+            'text' => 'Pelanggan',
+            'url'  => 'admin/customer',
+            'icon'        => 'user',
+        ],
         'ACCOUNT SETTINGS',
         [
             'text' => 'Profile',

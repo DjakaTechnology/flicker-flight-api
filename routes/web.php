@@ -45,3 +45,8 @@ Route::get('admin/reservation/{id}', 'ReservationController@reservationDetail');
 Route::get('admin/reservation/{id}/save', 'ReservationController@reservationSave');
 Route::get('admin/reservation/{id}/delete', 'ReservationController@reservationDelete');
 Route::get('admin/reservation/{id}/{status}', 'ReservationController@reservationConfirm');
+
+Route::get('admin/customer', 'CustomerController@customer');
+Route::get('admin/customer/{id}', 'CustomerController@customerDetail');
+Route::get('admin/customer/{id}/save', 'CustomerController@customerSave');
+Route::get('admin/customer/{id}/delete', 'CustomerController@customerDelete');
