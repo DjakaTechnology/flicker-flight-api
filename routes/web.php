@@ -28,3 +28,8 @@ Route::get('admin/airline', 'AirlineController@airline');
 Route::get('admin/airline/{id}', 'AirlineController@airlineDetail');
 Route::get('admin/airline/{id}/update', 'AirlineController@airlineUpdate');
 Route::get('admin/airline/{id}/delete', 'AirlineController@airlineDelete');
+
+Route::get('admin/plane', 'PlaneController@plane');
+Route::get('admin/plane/{id}', 'PlaneController@planeDetail');
+Route::get('admin/plane/{id}/save', 'PlaneController@planeSave');
+Route::get('admin/plane/{id}/delete', 'PlaneController@planeDelete');
