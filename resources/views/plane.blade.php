@@ -1,15 +1,15 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'Pesawat | Flicker')
 
 @section('content_header')
-<h1>Bandara</h1>
+<h1>Pesawat</h1>
 @stop
 
 @section('content')
 <div class="box box-primary">
     <div class="box-header with-border">
-        <h1 class="box-title">Cari Data Bandara</h1>
+        <h1 class="box-title">Cari Data Pesawat</h1>
         <div class="box-tools pull-right">
 
         </div>

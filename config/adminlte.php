@@ -124,6 +124,11 @@ return [
             'url'  => 'admin/airline',
             'icon'        => 'sitemap',
         ],
+        [
+            'text' => 'Pesawat',
+            'url'  => 'admin/plane',
+            'icon'        => 'plane',
+        ],
         'ACCOUNT SETTINGS',
         [
             'text' => 'Profile',
