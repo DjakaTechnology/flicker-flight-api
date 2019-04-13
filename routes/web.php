@@ -23,3 +23,8 @@ Route::get('admin/airport', 'AirportController@airport');
 Route::get('admin/airport/{id}', 'AirportController@airportDetail');
 Route::get('admin/airport/{id}/update', 'AirportController@airportUpdate');
 Route::get('admin/airport/{id}/delete', 'AirportController@airportDelete');
+
+Route::get('admin/airline', 'AirlineController@airline');
+Route::get('admin/airline/{id}', 'AirlineController@airlineDetail');
+Route::get('admin/airline/{id}/update', 'AirlineController@airlineUpdate');
+Route::get('admin/airline/{id}/delete', 'AirlineController@airlineDelete');

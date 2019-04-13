@@ -11,26 +11,22 @@
     <div class="col-md-6">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Edit Bandara {{$airport->name}}</h3>
+                <h3 class="box-title">Edit Bandara {{$airline->name}}</h3>
             </div>
             <!-- form start -->
-            <form role="form" action="{{url('admin/airport/'.$airline->id.'/update')}}">
+            <form role="form" action="{{url('admin/airline/'.$airline->id.'/update')}}">
                 <div class="box-body">
                     <div class="form-group">
                         <label>Nama</label>
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Masukkan nama bandara" value="{{$airport->name}}">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Masukkan nama maskapai" value="{{$airline->name}}">
                     </div>
                     <div class="form-group">
-                        <label>Kode</label>
-                        <input type="text" class="form-control" name="code" id="code" placeholder="Masukkan kode" value="{{$airport->code}}">
+                        <label>Logo</label>
+                        <input type="text" class="form-control" name="logo" id="logo" placeholder="Masukkan url logo" value="{{$airline->logo}}">
                     </div>
                     <div class="form-group">
-                        <label>Kota</label>
-                        <input type="text" class="form-control" name="city" id="city" placeholder="Masukkan kota" value="{{$airport->city}}">
-                    </div>
-                    <div class="form-group">
-                        <label>Alamat</label>
-                        <textarea type="text" class="form-control" name="address" id="address" placeholder="Masukkan alamat">{{$airport->address}}</textarea>
+                        <label>Deskripsi</label>
+                        <input type="text" class="form-control" name="description" id="description" placeholder="Masukkan deskripsi" value="{{$airline->description}}">
                     </div>
                 </div>
                 <!-- /.box-body -->

@@ -21,10 +21,11 @@ class AirlineController extends Controller{
 
     public function airlineUpdate(Request $q){
         $airline = Airline::find($q->id);
+        
         $airline->name = $q->name;
-        $airline->code = $q->code;
-        $airline->address = $q->address;
-        $airline->city = $q->city;
+        $airline->logo = $q->logo;
+        $airline->description = $q->description;
+    
         $airline->save();
 
         return view('airline_detail')->with('airline', $airline);

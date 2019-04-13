@@ -28,14 +28,14 @@
                 @foreach($airline as $a)
                 <tr>
                     <td>{{$a->name}}</td>
-                    <td><img src="{{$a->logo}}"/></td>
+                    <td><img src="{{$a->logo}}" height="24px"/></td>
                     <td>{{$a->description}}</td>
                     <td>
-                        <a href="{{url('admin/airport/'.$a->id)}}">
+                        <a href="{{url('admin/airline/'.$a->id)}}">
                             <i class="fa fa-pencil"></i>
                         </a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="{{url('admin/airport/'.$a->id.'/delete')}}">
+                        <a href="{{url('admin/airline/'.$a->id.'/delete')}}">
                             <i class="fa fa-trash"></i>
                         </a>
                     </td>

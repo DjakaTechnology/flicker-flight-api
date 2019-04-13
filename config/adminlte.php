@@ -119,6 +119,11 @@ return [
             'url'  => 'admin/airport',
             'icon'        => 'building',
         ],
+        [
+            'text' => 'Maskapai',
+            'url'  => 'admin/airline',
+            'icon'        => 'sitemap',
+        ],
         'ACCOUNT SETTINGS',
         [
             'text' => 'Profile',
