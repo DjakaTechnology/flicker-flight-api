@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Airline;
 
+use Illuminate\Support\Facades\Redirect;
+
 class AirlineController extends Controller{
     public function __construct(){
         
@@ -16,11 +18,14 @@ class AirlineController extends Controller{
     }
 
     public function airlineDetail(Request $request){
-        return view('airline_detail')->with('airline', Airline::find($request->id));
+        $airline = $request->id == "new" ? new Airline() : Airline::find($request->id);
+        if($request->id == "new") $airline->id = -1;
+
+        return view('airline_detail')->with('airline', $airline);
     }
 
     public function airlineUpdate(Request $q){
-        $airline = Airline::find($q->id);
+        $airline = $q->id == -1 ? new Airline() : Airline::find($q->id);
         
         $airline->name = $q->name;
         $airline->logo = $q->logo;
@@ -33,8 +38,8 @@ class AirlineController extends Controller{
 
     public function airlineDelete(Request $q){
         $airline = Airline::find($q->id);
-        $airline->delete;
+        $airline->delete();
 
-        redirect('/airline');
+        return redirect('admin/airline');
     }
 }

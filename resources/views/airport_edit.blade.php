@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'Bandara | Flicker')
 
 @section('content_header')
 <h1>Bandara</h1>
@@ -14,7 +14,7 @@
                 <h3 class="box-title">Edit Bandara {{$airport->name}}</h3>
             </div>
             <!-- form start -->
-            <form role="form" action="{{url('admin/airport/'.$airline->id.'/update')}}">
+            <form role="form" action="{{url('admin/airport/'.$airport->id.'/update')}}">
                 <div class="box-body">
                     <div class="form-group">
                         <label>Nama</label>

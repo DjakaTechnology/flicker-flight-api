@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Airport;
+use Illuminate\Support\Facades\Redirect;
 
 class AirportController extends Controller{
     public function __construct(){
@@ -16,11 +17,14 @@ class AirportController extends Controller{
     }
 
     public function airportDetail(Request $request){
-        return view('airport_edit')->with('airport', Airport::find($request->id));
+        $airport = $request->id == "new" ? new Airport() : Airport::find($request->id);
+        if($request->id == "new") $airport->id = -1;
+
+        return view('airport_edit')->with('airport', $airport);
     }
 
     public function airportUpdate(Request $q){
-        $airport = Airport::find($q->id);
+        $airport = $q->id == -1 ? new Airport() : Airport::find($q->id);
         $airport->name = $q->name;
         $airport->code = $q->code;
         $airport->address = $q->address;
@@ -32,8 +36,8 @@ class AirportController extends Controller{
 
     public function airportDelete(Request $q){
         $airport = Airport::find($q->id);
-        $airport->delete;
+        $airport->delete();
 
-        redirect('/airport');
+        return redirect('admin/airport');
     }
 }

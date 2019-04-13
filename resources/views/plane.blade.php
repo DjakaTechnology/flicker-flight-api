@@ -11,7 +11,7 @@
     <div class="box-header with-border">
         <h1 class="box-title">Cari Data Pesawat</h1>
         <div class="box-tools pull-right">
-
+            <a href="{{url('admin/plane/new')}}"><button class="btn btn-success">Tambah</button></a>
         </div>
     </div>
     <div class="box-body">

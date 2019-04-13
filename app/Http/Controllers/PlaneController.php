@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Plane;
 use App\Airline;
+use Illuminate\Support\Facades\Redirect;
 
 class PlaneController extends Controller{
     public function __construct(){
@@ -38,8 +39,8 @@ class PlaneController extends Controller{
 
     public function planeDelete(Request $q){
         $plane = Plane::find($q->id);
-        $plane->delete;
+        $plane->delete();
 
-        redirect('/plane');
+        return redirect('admin/plane');
     }
 }

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'Maskapai | Flicker')
 
 @section('content_header')
 <h1>Bandara</h1>
@@ -9,15 +9,16 @@
 @section('content')
 <div class="box box-primary">
     <div class="box-header with-border">
-        <h1 class="box-title">Cari Data Bandara</h1>
+        <h1 class="box-title">Cari Data Maskapai</h1>
         <div class="box-tools pull-right">
-
+            <a href="{{url('admin/airline/new')}}"><button class="btn btn-success">Tambah</button></a>
         </div>
     </div>
     <div class="box-body">
         <table id="table" class="table table-striped table-bordered">
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>Nama</th>
                     <th>Logo</th>
                     <th>Deskripsi</th>
@@ -27,6 +28,7 @@
             <tbody>
                 @foreach($airline as $a)
                 <tr>
+                    <td>{{$a->id}}</td>
                     <td>{{$a->name}}</td>
                     <td><img src="{{$a->logo}}" height="24px"/></td>
                     <td>{{$a->description}}</td>
