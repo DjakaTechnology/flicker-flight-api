@@ -108,18 +108,16 @@ return [
     */
 
     'menu' => [
-        'MAIN NAVIGATION',
+        'DATA NAVIGATION',
         [
             'text' => 'Blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text' => 'Bandara',
+            'url'  => 'admin/airport',
+            'icon'        => 'building',
         ],
         'ACCOUNT SETTINGS',
         [
