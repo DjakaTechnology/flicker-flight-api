@@ -33,3 +33,8 @@ Route::get('admin/plane', 'PlaneController@plane');
 Route::get('admin/plane/{id}', 'PlaneController@planeDetail');
 Route::get('admin/plane/{id}/save', 'PlaneController@planeSave');
 Route::get('admin/plane/{id}/delete', 'PlaneController@planeDelete');
+
+Route::get('admin/route', 'RouteController@route');
+Route::get('admin/route/{id}', 'RouteController@routeDetail');
+Route::get('admin/route/{id}/save', 'RouteController@routeSave');
+Route::get('admin/route/{id}/delete', 'RouteController@routeDelete');

@@ -129,6 +129,11 @@ return [
             'url'  => 'admin/plane',
             'icon'        => 'plane',
         ],
+        [
+            'text' => 'Rute',
+            'url'  => 'admin/route',
+            'icon'        => 'road',
+        ],
         'ACCOUNT SETTINGS',
         [
             'text' => 'Profile',
