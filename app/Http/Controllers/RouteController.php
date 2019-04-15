@@ -31,7 +31,9 @@ class RouteController extends Controller{
         $route->airport_from_id = $q->airport_from_id;
         $route->airport_to_id = $q->airport_to_id;
         $route->depart_at = $q->depart_at;
-        $route->airline_id = $q->airline_id;
+        $route->price = $q->price;
+        $route->plane_id = $q->plane_id;
+        $route->arrived_at = $q->arrived_at;
     
         $route->save();
 

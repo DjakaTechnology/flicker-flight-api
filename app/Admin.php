@@ -2,10 +2,10 @@
 namespace App;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-class User extends Authenticatable
+use Illuminate\Foundation\Auth\Admin as Authenticatable;
+class Admin extends Authenticatable
 {
-  protected $table = 'customers';
+  protected $table = 'users';
   use HasApiTokens, Notifiable;
 /**
 * The attributes that are mass assignable.
@@ -23,8 +23,4 @@ protected $fillable = [
 protected $hidden = [
 'password', 'remember_token',
 ];
-
-public function gender(){
-  return $this->belongsTo('App\Gender');
-}
 }

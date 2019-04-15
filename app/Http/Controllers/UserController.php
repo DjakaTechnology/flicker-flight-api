@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User; 
+use App\Admin; 
 use Illuminate\Support\Facades\Auth; 
 use Validator;
 
@@ -17,8 +17,8 @@ class UserController extends Controller{
     }
 
     public function login(){ 
-        if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){ 
-            $user = Auth::user(); 
+        if(Auth::guard('admin')->attempt(['email' => request('email'), 'password' => request('password')])){ 
+            $user = Auth::guard('admin')->user();; 
             session(['user' => $user]);
             return redirect('/');
         } 

@@ -15,6 +15,8 @@ use Illuminate\Http\Request;
 Route::get('airport', 'API\AirportController@index');
 Route::get('airport/search', 'API\AirportController@search');
 
+Route::get('route/{from}/{to}/{depart}', 'API\RouteController@routeFromTo');
+
 Route::post('login', 'API\UserController@login');
 Route::post('register', 'API\UserController@register');
 Route::group(['middleware' => 'auth:api'], function(){

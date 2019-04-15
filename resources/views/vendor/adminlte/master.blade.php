@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/font-awesome/css/font-awesome.min.css') }}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/Ionicons/css/ionicons.min.css') }}">
-    <link rel="stylesheet" href="{{ url('css/style.css') }}">
+    <link rel="stylesheet" href="{{ url('css/bootstrap-datepicker.min.css') }}">
+    
+    <link rel="stylesheet" href="{{ asset('vendor') }}">
 
     @if(config('adminlte.plugins.select2'))
         <!-- Select2 -->
@@ -46,6 +48,8 @@
 <script src="{{ asset('vendor/adminlte/vendor/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ asset('vendor/adminlte/vendor/jquery/dist/jquery.slimscroll.min.js') }}"></script>
 <script src="{{ asset('vendor/adminlte/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/moment.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
 
 @if(config('adminlte.plugins.select2'))
     <!-- Select2 -->

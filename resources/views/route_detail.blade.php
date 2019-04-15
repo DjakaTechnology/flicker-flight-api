@@ -14,7 +14,7 @@
                 <h3 class="box-title">Edit Rute {{$route->id}}</h3>
             </div>
             <!-- form start -->
-            <form role="form" action="{{url('admin/plane/'.$route->id.'/save')}}">
+            <form role="form" action="{{url('admin/route/'.$route->id.'/save')}}">
                 <div class="box-body">
                     <div class="form-group">
                         <label>Dari</label>
@@ -46,7 +46,16 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input type="datetime-local" name="depart_at" class="form-control pull-right" id="depart_at" value="{{$route->depart_at}}">
+                            <input name="depart_at" value="{{$route->depart_at}}" class="form-control datepicker" id="exampleInputEmail1" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Tiba Pada:</label>
+                        <div class="input-group date">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input name="arrived_at" value="{{$route->arrived_at}}" class="form-control datepicker" id="exampleInputEmail1" placeholder="Name">
                         </div>
                     </div>
                     <div class="form-group">
@@ -56,7 +65,7 @@
                     </div>
                     <div class="form-group">
                         <label>Pesawat</label>
-                        <select class="form-control" name="airline_id">
+                        <select class="form-control" name="plane_id">
                             @foreach($plane as $a)
                             @if($a->id == $route->plane_id)
                             <option value="{{$a->id}}" selected>{{$a->code}} ({{$a->airline->name}})</option>
@@ -81,6 +90,9 @@
             $(document).ready(function () {
                 $('#table').dataTable();
             });
+			$( function() {
+	$(".datepicker").datetimepicker({format : "YYYY-MM-DD HH:mm:ss"});
+  } );
 
         </script>
         @stop
