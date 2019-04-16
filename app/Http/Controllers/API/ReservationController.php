@@ -1,0 +1,43 @@
+<?php
+namespace App\Http\Controllers\API;
+use Illuminate\Http\Request; 
+use App\Http\Controllers\Controller; 
+use App\Route;
+use App\Reservation;
+use Illuminate\Support\Facades\Auth; 
+use Validator;
+class ReservationController extends Controller {
+    public $successStatus = 200;
+
+    function index(){
+        $result = Route::all();
+        return response()->json($result, $this-> successStatus);
+    }
+
+    function routeFromTo(Request $q){
+        return Route::where('airport_from_id', $q->from)
+                            ->where('airport_to_id', $q->to)
+                            ->where('depart_at', 'LIKE', "%$q->depart%")
+                            ->with('plane', 'plane.airline', 'airportTo', 'airportFrom')
+                            ->get();
+    }
+
+    function search(Request $request){
+        $result = Airport::where('name', 'like', "%$request->q%")
+                            ->orWhere('code', 'like', "%$request->q%")
+                            ->orWhere('city', 'like', "%$request->q%")
+                            ->orWhere('address', 'like', "%$request->q%")
+                            ->get();
+        
+        return response()->json($result, $this-> successStatus); 
+    }
+
+    function seatTaken(Request $request){
+        $result = Reservation::where('route_id', $request->id)
+                                ->where('status_id', '!=', 3)
+                                ->select('name', 'gender_id', 'seat_code')
+                                ->get();
+
+        return response()->json($result, $this-> successStatus); 
+    }
+}
