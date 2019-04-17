@@ -17,6 +17,14 @@ Route::get('airport/search', 'API\AirportController@search');
 
 Route::get('route/{from}/{to}/{depart}', 'API\RouteController@routeFromTo');
 
+Route::post('reservation', 'API\ReservationController@insert');
+Route::post('reservation/mine', 'API\ReservationController@mine');
+
+Route::get('customer/{id}/reservation', 'API\ReservationController@customer');
+Route::post('customer/update', 'API\CustomerController@update');
+
+Route::post('reservation/upload', 'API\ReservationController@upload');
+
 Route::post('login', 'API\UserController@login');
 Route::post('register', 'API\UserController@register');
 Route::group(['middleware' => 'auth:api'], function(){

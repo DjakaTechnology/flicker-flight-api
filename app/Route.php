@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use App\Airport;
 
 class Route extends Model{
+    public $primary_key = 'id';
+
     public function airportFrom(){
         return $this->belongsTo('App\Airport', 'airport_from_id');
     }

@@ -26,6 +26,7 @@ class RouteController extends Controller {
                             ->orWhere('code', 'like', "%$request->q%")
                             ->orWhere('city', 'like', "%$request->q%")
                             ->orWhere('address', 'like', "%$request->q%")
+                            ->with('plane', 'plane.airline', 'airportTo', 'airportFrom')
                             ->get();
         
         return response()->json($result, $this-> successStatus); 

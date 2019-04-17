@@ -13,6 +13,10 @@ class Reservation extends Model{
         return $this->belongsTo('App\Airport', 'destination_id');
     }
 
+    public function route(){
+        return $this->belongsTo('App\Route');
+    }
+
     public function status(){
         return $this->belongsTo('App\Status');
     }

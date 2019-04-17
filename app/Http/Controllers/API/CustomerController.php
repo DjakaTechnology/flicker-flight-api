@@ -3,6 +3,7 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request; 
 use App\Http\Controllers\Controller; 
 use App\User; 
+use App\Customer;
 use Illuminate\Support\Facades\Auth; 
 use Validator;
 class CustomerController extends Controller {
@@ -42,4 +43,17 @@ class CustomerController extends Controller {
         $user = Auth::user(); 
         return response()->json(['success' => $user], $this-> successStatus); 
     } 
+
+    public function update(Request $q){
+        $customer = Customer::find($q->id);
+        $customer->name = $q->name;
+        $customer->address = $q->address;
+        $customer->birthdate = $q->birthdate;
+        $customer->gender_id = $q->gender_id;
+        $customer->phone = $q->phone;
+
+        $customer->save();
+
+        return response()->json($customer, $this-> successStatus); 
+    }
 }
