@@ -11,7 +11,7 @@
     <div class="box-header with-border">
         <h1 class="box-title">Cari Data Pemesanan</h1>
         <div class="box-tools pull-right">
-            <a href="{{url('admin/route/new')}}"><button class="btn btn-success">Tambah</button></a>
+            <!-- <a href="{{url('admin/route/new')}}"><button class="btn btn-success">Tambah</button></a> -->
         </div>
     </div>
     <div class="box-body">
@@ -42,7 +42,7 @@
                             <button type="submit" class="btn btn-primary">Terima</button>
                         </a>
                         &nbsp;&nbsp;&nbsp;
-                        <a href="{{url('admin/route/'.$a->id.'/3')}}">
+                        <a href="{{url('admin/reservation/'.$a->id.'/3')}}">
                             <button type="submit" class="btn btn-danger">Tolak</button>
                         </a>
                     </td>

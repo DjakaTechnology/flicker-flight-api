@@ -35,9 +35,9 @@ class UserController extends Controller {
         $input['password'] = bcrypt($input['password']); 
         $user = User::create($input); 
         $success['token'] =  $user->createToken('MyApp')-> accessToken; 
-        $success['name'] =  $user->name;
-
-        return response()->json(['success'=>$success], $this-> successStatus); 
+        $user = User::where('email', request('email'))->with('gender')->first();
+            $user->token = $success['token'];
+            return response()->json($user, $this->successStatus);
     }
 
     public function details() { 

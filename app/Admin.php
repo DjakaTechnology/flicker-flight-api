@@ -23,4 +23,8 @@ protected $fillable = [
 protected $hidden = [
 'password', 'remember_token',
 ];
+
+public function level(){
+  return $this->belongsTo('App\Level');
+}
 }

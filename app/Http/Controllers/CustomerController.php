@@ -7,15 +7,20 @@ use App\Customer;
 use App\Gender;
 
 class CustomerController extends Controller{
-    public function __construct(){
-        
+    public function checkLogin(){
+        if(session("user") == null)
+            redirect('/')->send();
     }
 
     public function customer(){
-        return view('customer')->with('customer', Customer::all());
+        $this->checkLogin();
+
+        return view('customer')->with('customer', Customer::with('gender')->get());
     }
 
     public function customerDetail(Request $request){
+        $this->checkLogin();
+
         $customer = $request->id == "new" ? new Customer() : Customer::find($request->id);
         if($request->id == "new"){
             $customer->id = -1;
@@ -24,6 +29,8 @@ class CustomerController extends Controller{
     }
 
     public function customerSave(Request $q){
+        $this->checkLogin();
+
         $customer = $q->id == -1 ? new Customer() : Customer::find($q->id);
         
         $customer->email = $q->email;
@@ -38,6 +45,8 @@ class CustomerController extends Controller{
     }
 
     public function customerDelete(Request $q){
+        $this->checkLogin();
+        
         $customer = Customer::find($q->id);
         $customer->delete();
 

@@ -8,15 +8,20 @@ use App\Airline;
 use Illuminate\Support\Facades\Redirect;
 
 class PlaneController extends Controller{
-    public function __construct(){
-        
+    public function checkLogin(){
+        if(session("user") == null)
+            redirect('/')->send();
     }
 
     public function plane(){
+        $this->checkLogin();
+
         return view('plane')->with('plane', Plane::with('airline')->get());
     }
 
     public function planeDetail(Request $request){
+        $this->checkLogin();
+
         $plane = $request->id == "new" ? new Plane() : Plane::find($request->id);
         if($request->id == "new"){
             $plane->id = -1;
@@ -25,6 +30,8 @@ class PlaneController extends Controller{
     }
 
     public function planeSave(Request $q){
+        $this->checkLogin();
+
         $plane = $q->id == -1 ? new Plane() : Plane::find($q->id);
         
         $plane->code = $q->code;
@@ -38,6 +45,8 @@ class PlaneController extends Controller{
     }
 
     public function planeDelete(Request $q){
+        $this->checkLogin();
+        
         $plane = Plane::find($q->id);
         $plane->delete();
 

@@ -87,7 +87,7 @@ class ReservationController extends Controller {
             $url = url('/').'/upload/'.$name;
             
             $reservation = Reservation::find($request->id);
-            $reservation->payment_proof = urlencode($url);
+            $reservation->payment_proof = $url;
             $reservation->save();
 
             return response()->json($reservation, $this-> successStatus); 

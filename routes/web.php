@@ -50,3 +50,8 @@ Route::get('admin/customer', 'CustomerController@customer');
 Route::get('admin/customer/{id}', 'CustomerController@customerDetail');
 Route::get('admin/customer/{id}/save', 'CustomerController@customerSave');
 Route::get('admin/customer/{id}/delete', 'CustomerController@customerDelete');
+
+Route::get('admin/staff', 'StaffController@staff');
+Route::get('admin/staff/{id}', 'StaffController@staffDetail');
+Route::get('admin/staff/{id}/save', 'StaffController@staffSave');
+Route::get('admin/staff/{id}/delete', 'StaffController@staffDelete');

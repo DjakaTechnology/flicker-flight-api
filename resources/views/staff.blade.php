@@ -11,7 +11,9 @@
     <div class="box-header with-border">
         <h1 class="box-title">Cari Data Pelanggan</h1>
         <div class="box-tools pull-right">
-            <!-- <a href="{{url('admin/customer/new')}}"><button class="btn btn-success">Tambah</button></a> -->
+        @if(session("user")->level_id == 1)
+            <a href="{{url('admin/staff/new')}}"><button class="btn btn-success">Tambah</button></a>
+            @endif
         </div>
     </div>
     <div class="box-body">
@@ -21,27 +23,23 @@
                     <th>Id</th>
                     <th>Email</th>
                     <th>Name</th>
-                    <th>Alamat</th>
-                    <th>Gender</th>
-                    <th>No Hp</th>
+                    <th>Level</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($customer as $a)
+                @foreach($staff as $a)
                 <tr>
                     <td>{{$a->id}}</td>
                     <td>{{$a->email}}</td>
                     <td>{{$a->name}}</td>
-                    <td>{{$a->address}}</td>
-                    <td>{{$a->gender->name}}</td>
-                    <td>{{$a->phone}}</td>
+                    <td>{{$a->level->name}}</td>
                     <td>
-                        <a href="{{url('admin/customer/'.$a->id)}}">
+                        <a href="{{url('admin/staff/'.$a->id)}}">
                             <i class="fa fa-pencil"></i>
                         </a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="{{url('admin/customer/'.$a->id.'/delete')}}">
+                        <a href="{{url('admin/staff/'.$a->id.'/delete')}}">
                             <i class="fa fa-trash"></i>
                         </a>
                     </td>

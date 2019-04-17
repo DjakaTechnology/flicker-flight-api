@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller{
-    public function index(){
+    public function index(Request $q){
         if(session('user') == null){
             return view('auth\login');
         }else
@@ -20,7 +20,7 @@ class UserController extends Controller{
         if(Auth::guard('admin')->attempt(['email' => request('email'), 'password' => request('password')])){ 
             $user = Auth::guard('admin')->user();; 
             session(['user' => $user]);
-            return redirect('/');
+            return view('home');
         } 
         else{ 
             return view('auth\login');

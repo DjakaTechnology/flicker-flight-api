@@ -149,6 +149,11 @@ return [
             'url'  => 'admin/customer',
             'icon'        => 'user',
         ],
+        [
+            'text' => 'Staff',
+            'url'  => 'admin/staff',
+            'icon'        => 'user-circle',
+        ],
         'ACCOUNT SETTINGS',
         [
             'text' => 'Profile',
@@ -197,19 +202,6 @@ return [
                     'url'  => '#',
                 ],
             ],
-        ],
-        'LABELS',
-        [
-            'text'       => 'Important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'Warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'Information',
-            'icon_color' => 'aqua',
         ],
     ],
 
