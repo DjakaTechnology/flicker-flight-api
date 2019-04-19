@@ -87,13 +87,21 @@ class ReservationController extends Controller {
             $url = url('/').'/upload/'.$name;
             
             $reservation = Reservation::find($request->id);
-            if($reservation->try_count < 1){
+            if($reservation->status_id != 3){
                 $reservation->payment_proof = $url;
-                if($reservation->status_id == 3)
-                    $reservation->try_count = $reservation->try_count + 1;
+                
                 $reservation->status_id = 1;
                 $reservation->save();
             }
+            
+            //Revision Feature
+            // if($reservation->try_count < 1){
+            //     $reservation->payment_proof = $url;
+            //     if($reservation->status_id == 3)
+            //         $reservation->try_count = $reservation->try_count + 1;
+            //     $reservation->status_id = 1;
+            //     $reservation->save();
+            // }
 
             return response()->json($reservation, $this-> successStatus); 
         }
