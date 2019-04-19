@@ -3,7 +3,7 @@
 @section('title', 'Pemesanan | Flicker')
 
 @section('content_header')
-<h1>Pesawat</h1>
+<h1>Pesanan</h1>
 @stop
 
 @section('content')
@@ -23,7 +23,7 @@
                     <th>Tanggal Pemesanan</th>
                     <th>Rute</th>
                     <th>Nama Pemesan</th>
-                    <th>Harga</th>
+                    <th>Bukti Pembayaran</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -35,7 +35,8 @@
                     <td>{{$a->res_code}}</td>
                     <td>{{$a->res_date}}</td>
                     <td>{{$a->res_loc}} - {{$a->destination->name}}</td>
-                    <td>{{$a->customer->name}}</td>
+                    <td>{{$a->customer->name}} ({{$a->name}})</td>
+                    <td><img width="320px" src="{{$a->payment_proof}}"></td>
                     <td>{{$a->status->name}}</td>
                     <td>
                         <a href="{{url('admin/reservation/'.$a->id.'/2')}}">

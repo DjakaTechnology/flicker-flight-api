@@ -3,7 +3,7 @@
 @section('title', 'Pemesanan | Flicker')
 
 @section('content_header')
-<h1>Pesawat</h1>
+<h1>Pesanan</h1>
 @stop
 
 @section('content')
@@ -35,7 +35,7 @@
                     <td>{{$a->res_code}}</td>
                     <td>{{$a->res_date}}</td>
                     <td>{{$a->res_loc}} - {{$a->destination->name}}</td>
-                    <td>{{$a->customer->name}}</td>
+                    <td>{{$a->customer->name}} ({{$a->name}})</td>
                     <td>{{$a->cost}}</td>
                     <td>{{$a->status->name}}</td>
                     <td>

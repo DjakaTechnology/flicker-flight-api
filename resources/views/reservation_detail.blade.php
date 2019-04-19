@@ -62,6 +62,10 @@
                             value="{{$reservation->cost}}'" disabled>
                     </div>
                     <div class="form-group">
+                        <label>Bukti Pembayaran</label><br>
+                        <img src="{{$reservation->payment_proof}}" width="480px">
+                    </div>
+                    <div class="form-group">
                         <label>Status</label>
                         <select class="form-control" name="status_id">
                             @foreach($status as $a)

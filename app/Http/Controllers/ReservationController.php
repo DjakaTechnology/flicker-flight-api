@@ -23,7 +23,7 @@ class ReservationController extends Controller{
     public function reservationDetail(Request $request){
         $this->checkLogin();
 
-        $reservation = $request->id == "new" ? new Reservation() : Reservation::find($request->id)->with('customer', 'destination', 'status')->first();
+        $reservation = $request->id == "new" ? new Reservation() : Reservation::where('id', $request->id)->with('customer', 'destination', 'status')->first();
         if($request->id == "new"){
             $reservation->id = -1;
         }
@@ -55,7 +55,7 @@ class ReservationController extends Controller{
     
         $reservation->save();
 
-        return view('reservation')->with('reservation', Reservation::with('customer', 'destination')->where('status_id', 1)->get());
+        return view('reservation_pending')->with('reservation', Reservation::with('customer', 'destination')->where('status_id', 1)->get());
     }
 
     public function reservationDelete(Request $q){
@@ -69,7 +69,7 @@ class ReservationController extends Controller{
 
     public function reservationPending(){
         $this->checkLogin();
-        
+
         return view('reservation_pending')->with('reservation', Reservation::with('customer', 'destination')->where('status_id', 1)->get());
     }
 }
