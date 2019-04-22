@@ -2,7 +2,7 @@
 namespace App;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\Admin as Authenticatable;
+use App\Providers\Admin as Authenticatable;
 class Admin extends Authenticatable
 {
   protected $table = 'users';
