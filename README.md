@@ -20,4 +20,8 @@ php artisan serve (to run in your 127.0.0.1:8000)<br>
 9. Open in the browser by typing your ipaddress<br>
 10. Finish<br>
 
+## Login Cridentials
+Username : djakajaya89@gmail.com<br>
+Password : 2001<br>
+
 WARNING : This Source code is not production ready beacuse I haven't implement any securities
